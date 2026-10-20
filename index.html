@@ -1,0 +1,1299 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>برای محدثه ❤️</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lalezar&family=Vazirmatn:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+html, body {
+  height: 100%;
+  overflow: hidden;
+  background: #000;
+  font-family: 'Vazirmatn', sans-serif;
+  color: #fff;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(circle at 50% 50%, rgba(255, 51, 102, 0.08), transparent 60%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.scene {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 1.2s ease, transform 1.2s ease;
+  transform: scale(0.95);
+  padding: 20px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+.scene.active {
+  opacity: 1;
+  pointer-events: auto;
+  transform: scale(1);
+}
+
+/* ============ Scene 1: Heart ============ */
+.click-title {
+  font-family: 'Lalezar', sans-serif;
+  font-size: clamp(1.7rem, 6vw, 3.2rem);
+  background: linear-gradient(90deg, #ff6b9d, #ff3366, #ff6b9d);
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: titleShine 3s linear infinite, titlePulse 2s ease-in-out infinite;
+  margin-bottom: 2rem;
+  text-align: center;
+  z-index: 1;
+  position: relative;
+  filter: drop-shadow(0 0 25px rgba(255, 51, 102, 0.7));
+  padding: 0 15px;
+}
+@keyframes titleShine {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 200% 50%; }
+}
+@keyframes titlePulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.06); }
+}
+
+.heart-wrapper {
+  width: min(78vw, 420px);
+  height: min(78vw, 420px);
+  cursor: pointer;
+  position: relative;
+  z-index: 1;
+  filter: drop-shadow(0 0 30px rgba(255, 51, 102, 0.5));
+  transition: filter 0.2s, transform 0.1s;
+}
+.heart-wrapper:active { transform: scale(0.94); }
+.heart-wrapper.full { filter: drop-shadow(0 0 70px rgba(255, 51, 102, 1)); }
+.heart-wrapper svg { width: 100%; height: 100%; display: block; }
+
+/* ============ Scene 2: Login ============ */
+.login-card {
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.05), rgba(255, 51, 102, 0.05));
+  border: 1px solid rgba(255, 51, 102, 0.3);
+  border-radius: 30px;
+  padding: clamp(22px, 5vw, 42px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow: 0 0 60px rgba(255, 51, 102, 0.2), inset 0 0 30px rgba(255, 51, 102, 0.05);
+  max-width: 92vw;
+  width: 380px;
+  animation: cardFloat 4s ease-in-out infinite;
+}
+@keyframes cardFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.photo-frame {
+  width: clamp(130px, 38vw, 180px);
+  height: clamp(130px, 38vw, 180px);
+  border-radius: 50%;
+  overflow: hidden;
+  position: relative;
+  border: 3px solid #ff3366;
+  box-shadow: 0 0 40px rgba(255, 51, 102, 0.7), 0 0 90px rgba(255, 51, 102, 0.3);
+}
+.photo-frame img { width: 100%; height: 100%; object-fit: cover; }
+.photo-frame::after {
+  content: '';
+  position: absolute;
+  inset: -6px;
+  border-radius: 50%;
+  border: 3px solid transparent;
+  border-top-color: #ff6b9d;
+  border-left-color: #ff6b9d;
+  animation: spin 3s linear infinite;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+
+.login-title {
+  font-size: 1.2rem;
+  color: #ff6b9d;
+  font-weight: 700;
+  text-align: center;
+}
+
+.login-input {
+  width: 100%;
+  min-width: 240px;
+  padding: 14px 20px;
+  border-radius: 15px;
+  border: 2px solid rgba(255, 51, 102, 0.4);
+  background: rgba(0, 0, 0, 0.55);
+  color: #fff;
+  font-family: inherit;
+  font-size: 1rem;
+  text-align: center;
+  outline: none;
+  transition: all 0.3s;
+  direction: ltr;
+}
+.login-input:focus {
+  border-color: #ff3366;
+  box-shadow: 0 0 20px rgba(255, 51, 102, 0.6);
+}
+
+.btn-primary {
+  padding: 14px 40px;
+  border-radius: 15px;
+  border: none;
+  background: linear-gradient(135deg, #ff6b9d, #ff3366);
+  color: #fff;
+  font-family: inherit;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s;
+  box-shadow: 0 5px 20px rgba(255, 51, 102, 0.5);
+}
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(255, 51, 102, 0.8);
+}
+.btn-primary:active { transform: translateY(0); }
+
+.login-error {
+  color: #ff3366;
+  font-size: 0.9rem;
+  min-height: 1.3em;
+  text-align: center;
+  opacity: 0;
+  font-weight: 600;
+  transition: opacity 0.3s;
+}
+.login-error.show {
+  opacity: 1;
+  animation: shake 0.5s;
+}
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-10px); }
+  75% { transform: translateX(10px); }
+}
+
+/* ============ Scene 3: Menu ============ */
+.menu-title {
+  font-family: 'Lalezar', sans-serif;
+  font-size: clamp(2rem, 7vw, 3.2rem);
+  background: linear-gradient(90deg, #ff6b9d, #ff3366);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  margin-bottom: 2.5rem;
+  filter: drop-shadow(0 0 25px rgba(255, 51, 102, 0.6));
+  text-align: center;
+}
+
+.stages-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+  width: min(92vw, 560px);
+  z-index: 1;
+}
+
+.stage-btn {
+  padding: 22px 12px;
+  border-radius: 20px;
+  border: 2px solid rgba(255, 51, 102, 0.5);
+  background: linear-gradient(145deg, rgba(255, 51, 102, 0.15), rgba(255, 51, 102, 0.05));
+  color: #fff;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  min-height: 115px;
+  justify-content: center;
+}
+.stage-btn .stage-icon { font-size: 2rem; }
+.stage-btn .stage-name { font-size: 0.95rem; }
+.stage-btn.unlocked {
+  box-shadow: 0 0 30px rgba(255, 51, 102, 0.3);
+  animation: btnPulse 2s ease-in-out infinite;
+}
+@keyframes btnPulse {
+  0%, 100% { box-shadow: 0 0 30px rgba(255, 51, 102, 0.3); }
+  50% { box-shadow: 0 0 50px rgba(255, 51, 102, 0.7); }
+}
+.stage-btn.unlocked:hover {
+  border-color: #ff3366;
+  background: linear-gradient(145deg, rgba(255, 51, 102, 0.3), rgba(255, 51, 102, 0.1));
+  transform: translateY(-3px);
+}
+.stage-btn.locked {
+  opacity: 0.4;
+  cursor: not-allowed;
+  filter: grayscale(1);
+}
+.stage-btn.completed {
+  border-color: #4ade80;
+  background: linear-gradient(145deg, rgba(74, 222, 128, 0.15), rgba(74, 222, 128, 0.05));
+  box-shadow: 0 0 25px rgba(74, 222, 128, 0.4);
+  animation: none;
+}
+
+/* ============ Stage Panels ============ */
+.stage-panel {
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.05), rgba(255, 51, 102, 0.05));
+  border: 1px solid rgba(255, 51, 102, 0.3);
+  border-radius: 30px;
+  padding: clamp(22px, 5vw, 48px);
+  max-width: min(92vw, 600px);
+  width: 100%;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow: 0 0 60px rgba(255, 51, 102, 0.2);
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  animation: cardFloat 4s ease-in-out infinite;
+  z-index: 1;
+}
+
+.question-text {
+  font-size: clamp(1rem, 3.2vw, 1.25rem);
+  line-height: 2;
+  text-align: center;
+  color: #ffd1dc;
+  font-weight: 600;
+}
+
+.slider-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.slider-value {
+  text-align: center;
+  font-size: 2.2rem;
+  font-weight: 900;
+  color: #ff3366;
+  font-family: 'Lalezar', sans-serif;
+  text-shadow: 0 0 25px rgba(255, 51, 102, 0.8);
+}
+
+.slider {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 25px;
+  background: transparent;
+  cursor: pointer;
+  outline: none;
+}
+.slider::-webkit-slider-runnable-track {
+  height: 25px;
+  border-radius: 15px;
+  background: linear-gradient(90deg, #ff3366 var(--val, 0%), rgba(255, 255, 255, 0.1) var(--val, 0%));
+  border: 2px solid rgba(255, 51, 102, 0.5);
+}
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, #fff, #ff3366);
+  margin-top: -8px;
+  box-shadow: 0 0 25px rgba(255, 51, 102, 1);
+  cursor: grab;
+  transition: transform 0.2s;
+}
+.slider::-webkit-slider-thumb:active { cursor: grabbing; transform: scale(1.15); }
+.slider::-moz-range-track {
+  height: 25px;
+  border-radius: 15px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 2px solid rgba(255, 51, 102, 0.5);
+}
+.slider::-moz-range-progress {
+  height: 25px;
+  border-radius: 15px;
+  background: #ff3366;
+}
+.slider::-moz-range-thumb {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, #fff, #ff3366);
+  box-shadow: 0 0 25px rgba(255, 51, 102, 1);
+  border: none;
+}
+
+.stage-error {
+  color: #ff3366;
+  text-align: center;
+  font-weight: 700;
+  font-size: 1.05rem;
+  min-height: 1.6em;
+}
+.stage-error.show { animation: shake 0.5s; }
+
+/* ============ Stage 2: Game ============ */
+.game-container {
+  width: min(94vw, 640px);
+  aspect-ratio: 4/5;
+  max-height: 82vh;
+  position: relative;
+  border-radius: 20px;
+  border: 2px solid rgba(255, 51, 102, 0.4);
+  background: radial-gradient(circle at 50% 50%, #1a0010, #000);
+  overflow: hidden;
+  box-shadow: 0 0 60px rgba(255, 51, 102, 0.3), inset 0 0 60px rgba(255, 51, 102, 0.1);
+  z-index: 1;
+}
+
+.game-hud {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.kills-bar-wrap {
+  width: 100%;
+  height: 20px;
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 51, 102, 0.5);
+  overflow: hidden;
+  position: relative;
+}
+.kills-bar {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, #ff3366, #ff6b9d);
+  transition: width 0.35s ease;
+  box-shadow: 0 0 15px rgba(255, 51, 102, 0.9);
+}
+.kills-text {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-shadow: 0 0 5px #000, 0 0 5px #000;
+}
+.lives {
+  display: flex;
+  gap: 5px;
+  justify-content: flex-end;
+  font-size: 1.4rem;
+  filter: drop-shadow(0 0 8px rgba(255, 51, 102, 0.8));
+}
+
+.shm {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 75px;
+  height: 75px;
+  transform: translate(-50%, -50%);
+  animation: tremble 0.16s infinite;
+  z-index: 5;
+  pointer-events: none;
+  filter: drop-shadow(0 0 18px rgba(255, 220, 220, 0.9));
+}
+.shm img { width: 100%; height: 100%; object-fit: contain; }
+@keyframes tremble {
+  0%, 100% { transform: translate(-50%, -50%) rotate(-3deg); }
+  50% { transform: translate(-50%, -50%) rotate(3deg); }
+}
+
+.demon {
+  position: absolute;
+  width: 52px;
+  height: 52px;
+  cursor: crosshair;
+  z-index: 4;
+  transition: opacity 0.3s, transform 0.3s;
+  filter: drop-shadow(0 0 12px rgba(255, 0, 0, 0.9));
+  animation: demonFloat 0.6s ease-in-out infinite;
+  touch-action: manipulation;
+}
+@keyframes demonFloat {
+  0%, 100% { transform: translate(-50%, -50%) scale(1) rotate(-6deg); }
+  50% { transform: translate(-50%, -50%) scale(1.12) rotate(6deg); }
+}
+.demon svg { width: 100%; height: 100%; display: block; }
+.demon.dying {
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(2.5) rotate(180deg) !important;
+  pointer-events: none;
+  animation: none;
+}
+
+.game-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.88);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  z-index: 20;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.5s;
+  padding: 20px;
+  text-align: center;
+}
+.game-overlay.show { opacity: 1; pointer-events: auto; }
+.game-overlay h3 { font-family: 'Lalezar', sans-serif; font-size: 2rem; }
+.game-overlay.win h3 { color: #4ade80; text-shadow: 0 0 25px #4ade80; }
+.game-overlay.lose h3 { color: #ff3366; text-shadow: 0 0 25px #ff3366; }
+.game-overlay p { color: #ffd1dc; font-size: 1rem; }
+
+/* ============ Stage 3 ============ */
+.options {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: center;
+  width: 100%;
+}
+
+.option-btn {
+  padding: 20px 30px;
+  border-radius: 20px;
+  border: 2px solid rgba(255, 51, 102, 0.5);
+  background: linear-gradient(145deg, rgba(255, 51, 102, 0.15), rgba(255, 51, 102, 0.05));
+  color: #fff;
+  font-family: inherit;
+  font-size: 1.05rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+  width: 100%;
+  max-width: 400px;
+}
+.option-btn:hover {
+  border-color: #ff3366;
+  background: linear-gradient(145deg, rgba(255, 51, 102, 0.3), rgba(255, 51, 102, 0.1));
+  transform: translateY(-2px);
+}
+.option-btn.correct {
+  border-color: #4ade80;
+  background: linear-gradient(145deg, rgba(74, 222, 128, 0.3), rgba(74, 222, 128, 0.1));
+  animation: correctPulse 0.6s ease-in-out infinite alternate;
+}
+@keyframes correctPulse {
+  from { box-shadow: 0 0 20px rgba(74, 222, 128, 0.5); }
+  to { box-shadow: 0 0 45px rgba(74, 222, 128, 1); }
+}
+
+/* ============ Toast ============ */
+.toast {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%) translateY(-120px);
+  background: linear-gradient(135deg, #ff3366, #c40036);
+  color: #fff;
+  padding: 12px 26px;
+  border-radius: 30px;
+  font-weight: 700;
+  z-index: 1000;
+  box-shadow: 0 5px 30px rgba(255, 51, 102, 0.7);
+  transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  pointer-events: none;
+  font-family: inherit;
+  font-size: 0.95rem;
+  max-width: 90vw;
+  text-align: center;
+}
+.toast.show { transform: translateX(-50%) translateY(0); }
+
+/* ============ Stage 4: Letter ============ */
+.letter {
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.04), rgba(255, 51, 102, 0.08));
+  border: 1px solid rgba(255, 51, 102, 0.35);
+  border-radius: 25px;
+  padding: clamp(22px, 5vw, 50px);
+  max-width: min(92vw, 700px);
+  max-height: 82vh;
+  overflow-y: auto;
+  box-shadow: 0 0 80px rgba(255, 51, 102, 0.3), inset 0 0 60px rgba(255, 51, 102, 0.05);
+  position: relative;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  animation: letterGlow 4s ease-in-out infinite;
+  z-index: 1;
+}
+@keyframes letterGlow {
+  0%, 100% { box-shadow: 0 0 80px rgba(255, 51, 102, 0.3), inset 0 0 60px rgba(255, 51, 102, 0.05); }
+  50% { box-shadow: 0 0 120px rgba(255, 51, 102, 0.5), inset 0 0 80px rgba(255, 51, 102, 0.12); }
+}
+.letter::-webkit-scrollbar { width: 6px; }
+.letter::-webkit-scrollbar-thumb { background: #ff3366; border-radius: 3px; }
+.letter::-webkit-scrollbar-track { background: rgba(255, 51, 102, 0.1); }
+
+.letter h2 {
+  font-family: 'Lalezar', sans-serif;
+  font-size: clamp(1.5rem, 4.5vw, 2.2rem);
+  color: #ff6b9d;
+  text-align: center;
+  margin-bottom: 25px;
+  text-shadow: 0 0 25px rgba(255, 51, 102, 0.7);
+}
+.letter p {
+  font-size: clamp(0.95rem, 2.6vw, 1.1rem);
+  line-height: 2.2;
+  text-align: justify;
+  color: #ffe0e8;
+  margin-bottom: 20px;
+}
+.letter .signature {
+  text-align: left;
+  font-family: 'Lalezar', sans-serif;
+  font-size: 1.25rem;
+  color: #ff6b9d;
+  margin-top: 30px;
+  text-shadow: 0 0 15px rgba(255, 51, 102, 0.6);
+  line-height: 2;
+}
+
+/* ============ Floating Hearts ============ */
+.floating-heart {
+  position: fixed;
+  bottom: -60px;
+  font-size: 24px;
+  pointer-events: none;
+  animation: floatUp linear infinite;
+  z-index: 0;
+  opacity: 0;
+}
+@keyframes floatUp {
+  0% { transform: translateY(0) rotate(0deg); opacity: 0; }
+  10% { opacity: 0.55; }
+  90% { opacity: 0.55; }
+  100% { transform: translateY(-110vh) rotate(360deg); opacity: 0; }
+}
+
+/* ============ Back Button ============ */
+.back-btn {
+  position: fixed;
+  top: 18px;
+  right: 18px;
+  background: rgba(255, 51, 102, 0.18);
+  border: 1px solid rgba(255, 51, 102, 0.5);
+  color: #ff6b9d;
+  padding: 10px 18px;
+  border-radius: 15px;
+  font-family: inherit;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  z-index: 100;
+  transition: all 0.3s;
+  display: none;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+.back-btn:hover { background: rgba(255, 51, 102, 0.4); }
+.back-btn.visible { display: block; }
+
+/* ============ Stage Complete ============ */
+.stage-complete {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.92);
+  z-index: 200;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.5s;
+  flex-direction: column;
+  gap: 20px;
+  text-align: center;
+  padding: 20px;
+}
+.stage-complete.show { opacity: 1; pointer-events: auto; }
+.stage-complete .trophy { font-size: 5rem; animation: trophyBounce 0.6s ease-in-out infinite alternate; }
+@keyframes trophyBounce {
+  from { transform: scale(1) rotate(-8deg); }
+  to { transform: scale(1.18) rotate(8deg); }
+}
+
+@media (max-width: 500px) {
+  .stages-grid { grid-template-columns: 1fr; }
+  .stage-btn { min-height: 88px; padding: 16px 12px; }
+  .stage-btn .stage-icon { font-size: 1.7rem; }
+}
+</style>
+</head>
+<body>
+
+<!-- ==================== Scene 1: Heart ==================== -->
+<div class="scene active" id="scene1">
+  <h1 class="click-title">محدثه تند تند کلیک کن</h1>
+  <div class="heart-wrapper" id="heartWrapper">
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <clipPath id="heartClip">
+          <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+        </clipPath>
+        <linearGradient id="waterGrad" gradientUnits="userSpaceOnUse" x1="12" y1="2" x2="12" y2="22">
+          <stop offset="0%" stop-color="#ff6b9d"/>
+          <stop offset="45%" stop-color="#ff3366"/>
+          <stop offset="100%" stop-color="#a30030"/>
+        </linearGradient>
+        <filter id="glow">
+          <feGaussianBlur stdDeviation="0.35" result="blur"/>
+          <feMerge>
+            <feMergeNode in="blur"/>
+            <feMergeNode in="SourceGraphic"/>
+          </feMerge>
+        </filter>
+      </defs>
+
+      <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"
+            fill="none" stroke="#ff3366" stroke-width="0.45" filter="url(#glow)"/>
+
+      <g clip-path="url(#heartClip)">
+        <g id="waterGroup" transform="translate(0, 22)">
+          <g>
+            <animateTransform attributeName="transform" type="translate"
+              values="0 0; -24 0" dur="1.4s" repeatCount="indefinite"/>
+            <path d="M -60 0 Q -54 -2 -48 0 T -36 0 T -24 0 T -12 0 T 0 0 T 12 0 T 24 0 T 36 0 T 48 0 T 60 0 L 60 40 L -60 40 Z"
+                  fill="url(#waterGrad)"/>
+          </g>
+        </g>
+      </g>
+    </svg>
+  </div>
+</div>
+
+<!-- ==================== Scene 2: Login ==================== -->
+<div class="scene" id="scene2">
+  <div class="login-card">
+    <div class="photo-frame">
+      <img src="https://uploadkon.ir/uploads/6d5020_26Picsart-26-10-20-21-40-24-044.png" alt="محدثه">
+    </div>
+    <div class="login-title">محدثه جان، رمز رو وارد کن</div>
+    <input type="password" class="login-input" id="passwordInput" placeholder="رمز عبور">
+    <button class="btn-primary" onclick="checkPassword()">ورود</button>
+    <div class="login-error" id="loginError"></div>
+  </div>
+</div>
+
+<!-- ==================== Scene 3: Menu ==================== -->
+<div class="scene" id="scene3">
+  <h2 class="menu-title">مراحل عشق</h2>
+  <div class="stages-grid">
+    <button class="stage-btn unlocked" data-stage="1">
+      <span class="stage-icon">💗</span>
+      <span class="stage-name">مرحله اول</span>
+    </button>
+    <button class="stage-btn locked" data-stage="2">
+      <span class="stage-icon">🔒</span>
+      <span class="stage-name">مرحله دوم</span>
+    </button>
+    <button class="stage-btn locked" data-stage="3">
+      <span class="stage-icon">🔒</span>
+      <span class="stage-name">مرحله سوم</span>
+    </button>
+    <button class="stage-btn locked" data-stage="4">
+      <span class="stage-icon">🔒</span>
+      <span class="stage-name">مرحله چهارم</span>
+    </button>
+  </div>
+</div>
+
+<!-- ==================== Stage 1 ==================== -->
+<div class="scene" id="stage1">
+  <button class="back-btn visible" onclick="backToMenu()">← بازگشت</button>
+  <div class="stage-panel">
+    <div class="question-text">
+      چند درصد از اینکه شاهان یا همون فرمانروات یا همون پادشاهت و یا همون سرورت رو ناراحت کردی پشیمونی؟
+    </div>
+    <div class="slider-wrapper">
+      <div class="slider-value" id="sliderValue">۱٪</div>
+      <input type="range" class="slider" id="regretSlider" min="1" max="100" value="1">
+    </div>
+    <button class="btn-primary" onclick="submitStage1()">ثبت پاسخ</button>
+    <div class="stage-error" id="stage1Error"></div>
+  </div>
+</div>
+
+<!-- ==================== Stage 2: Game ==================== -->
+<div class="scene" id="stage2">
+  <button class="back-btn visible" onclick="backToMenu()">← بازگشت</button>
+  <div class="game-container" id="arena">
+    <div class="game-hud">
+      <div class="kills-bar-wrap">
+        <div class="kills-bar" id="killsBar"></div>
+        <div class="kills-text" id="killsText">۰ / ۲۵</div>
+      </div>
+      <div class="lives" id="livesDisplay">❤️❤️❤️</div>
+    </div>
+    <div class="game-overlay" id="gameOverlay">
+      <h3 id="overlayTitle"></h3>
+      <p id="overlayText"></p>
+      <button class="btn-primary" id="overlayBtn" style="display:none;">تلاش دوباره</button>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== Stage 3 ==================== -->
+<div class="scene" id="stage3">
+  <button class="back-btn visible" onclick="backToMenu()">← بازگشت</button>
+  <div class="stage-panel">
+    <div class="question-text">
+      قبول داری شاهان بیشتر ترو دوست داره؟
+    </div>
+    <div class="options">
+      <button class="option-btn" id="correctOption" onclick="chooseCorrect()">
+        بله، شاهان منو بیشتر دوست داره
+      </button>
+      <button class="option-btn" id="wrongOption" onclick="chooseWrong()">
+        نه، من شاهانو بیشتر دوست دارم
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== Stage 4: Letter ==================== -->
+<div class="scene" id="stage4">
+  <button class="back-btn visible" onclick="backToMenu()">← بازگشت</button>
+  <div class="letter">
+    <h2>✉️ نامه‌ای از شاهان</h2>
+    <p>
+      بدان ای فرزند، اگر تا اینجای کار آمده‌ای، همانا سخت پشیمان شده‌ای؛ و چون دل من بر تو می‌سوزد و همگان می‌دانند که پادشاهِ شاهان چه‌سان بخشنده و مهربان است و آوازهٔ محبت و مهربانی‌اش بر زبان همهٔ جهانیان است، چنان‌که مادران برای فرزندان خویش به‌جای لالایی و افسانه، داستان‌های شجاعت و مهربانی و دلسوزی فرمانروای هفت دریا و همهٔ گیتی را بازمی‌گفتند و پدران به‌جای اذان در گوش نوزادان خویش نام شاهان را می‌خواندند و از خداوند می‌خواستند که لطف و مهربانی شاهِ شاهان نصیب فرزندانشان شود.
+    </p>
+    <p>
+      با این اوصاف، من که پادشاهِ پادشاهان و فرمانروای فرمانروایان و سرورِ سروران و شاهِ شاهانم، شاهان زمانی، در این دم لطف خویش را نصیب روح پاک تو می‌کنم و تو را می‌بخشم و این بار عفو می‌کنم.
+    </p>
+    <p>
+      و نیز امیدوارم هرگز دیگر مرتکب اشتباهات خویش نشوی؛ زیرا همان‌گونه که لطف شاهان نصیبت شد، خشم او نیز نصیبت خواهد شد.
+    </p>
+    <div class="signature">
+      دوست همیشگی تو، «شاهان زمانی»
+    </div>
+  </div>
+</div>
+
+<!-- ==================== Stage Complete Popup ==================== -->
+<div class="stage-complete" id="stageComplete">
+  <div class="trophy">🏆</div>
+  <h2 id="completeTitle" style="font-family:'Lalezar',sans-serif;font-size:2rem;color:#ff6b9d;text-shadow:0 0 25px rgba(255,51,102,0.8);"></h2>
+  <p id="completeText" style="color:#ffd1dc;font-size:1rem;"></p>
+</div>
+
+<!-- ==================== Toast ==================== -->
+<div class="toast" id="toast"></div>
+
+<script>
+/* ============ Utilities ============ */
+function toPersianNum(num) {
+  const p = ['۰','۱','۲','۳','۴','۵','۶','۷','۸','۹'];
+  return String(num).replace(/\d/g, d => p[+d]);
+}
+
+function showScene(id) {
+  document.querySelectorAll('.scene').forEach(s => s.classList.remove('active'));
+  const el = document.getElementById(id);
+  if (el) el.classList.add('active');
+}
+
+function vibrate(ms) {
+  if (navigator.vibrate) { try { navigator.vibrate(ms); } catch(e){} }
+}
+
+/* ============ Toast ============ */
+let toastTimer;
+function showToast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.remove('show');
+  void t.offsetWidth;
+  t.classList.add('show');
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => t.classList.remove('show'), 2000);
+}
+
+/* ============ Scene 1: Heart Clicking ============ */
+let fill = 0;
+let heartComplete = false;
+const heartWrapper = document.getElementById('heartWrapper');
+const waterGroup = document.getElementById('waterGroup');
+
+function updateWater() {
+  const y = 22 - (20 * fill / 100);
+  waterGroup.setAttribute('transform', `translate(0, ${y})`);
+}
+
+heartWrapper.addEventListener('click', (e) => {
+  e.preventDefault();
+  if (heartComplete) return;
+  fill = Math.min(100, fill + 5);
+  updateWater();
+  vibrate(10);
+  if (fill >= 100) {
+    heartComplete = true;
+    heartWrapper.classList.add('full');
+    vibrate([50, 30, 50]);
+    setTimeout(() => showScene('scene2'), 900);
+  }
+});
+
+// Decay loop
+setInterval(() => {
+  if (!heartComplete && fill > 0) {
+    fill = Math.max(0, fill - 1);
+    updateWater();
+  }
+}, 150);
+
+/* ============ Scene 2: Login ============ */
+function checkPassword() {
+  const input = document.getElementById('passwordInput');
+  const err = document.getElementById('loginError');
+  if (input.value === 'shahan_mano_bbakhsh') {
+    err.classList.remove('show');
+    err.textContent = '';
+    vibrate([30, 30, 30]);
+    setTimeout(() => {
+      showScene('scene3');
+      updateMenu();
+      startHearts();
+    }, 500);
+  } else {
+    err.textContent = 'رمز اشتباهه خانومی، دوباره تلاش کن';
+    err.classList.remove('show');
+    void err.offsetWidth;
+    err.classList.add('show');
+    input.value = '';
+    input.focus();
+    vibrate(200);
+  }
+}
+
+document.getElementById('passwordInput').addEventListener('keydown', (e) => {
+  if (e.key === 'Enter') checkPassword();
+});
+
+/* ============ Stage Progress State ============ */
+const stages = {
+  '1': { unlocked: true, completed: false, scene: 'stage1' },
+  '2': { unlocked: false, completed: false, scene: 'stage2' },
+  '3': { unlocked: false, completed: false, scene: 'stage3' },
+  '4': { unlocked: false, completed: false, scene: 'stage4' },
+};
+
+function updateMenu() {
+  document.querySelectorAll('.stage-btn').forEach(btn => {
+    const stage = btn.dataset.stage;
+    const st = stages[stage];
+    btn.classList.remove('unlocked', 'locked', 'completed');
+    const iconEl = btn.querySelector('.stage-icon');
+    if (st.completed) {
+      btn.classList.add('completed');
+      iconEl.textContent = '✓';
+    } else if (st.unlocked) {
+      btn.classList.add('unlocked');
+      iconEl.textContent = '💗';
+    } else {
+      btn.classList.add('locked');
+      iconEl.textContent = '🔒';
+    }
+  });
+}
+
+document.querySelectorAll('.stage-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const stage = btn.dataset.stage;
+    if (!stages[stage].unlocked) return;
+    showScene(stages[stage].scene);
+    if (stage === '1') initStage1();
+    if (stage === '2') initStage2();
+    if (stage === '3') initStage3();
+  });
+});
+
+function backToMenu() {
+  if (game) {
+    game.running = false;
+    if (game.spawnTimer) clearInterval(game.spawnTimer);
+    if (game.frameId) cancelAnimationFrame(game.frameId);
+  }
+  showScene('scene3');
+  updateMenu();
+}
+
+function showCompletion(name, callback) {
+  const el = document.getElementById('stageComplete');
+  document.getElementById('completeTitle').textContent = name + ' انجام شد!';
+  document.getElementById('completeText').textContent = 'مرحله بعدی برات باز شد 💗';
+  el.classList.add('show');
+  vibrate([40, 40, 40, 40, 40]);
+  setTimeout(() => {
+    el.classList.remove('show');
+    if (callback) callback();
+  }, 2100);
+}
+
+/* ============ Stage 1 ============ */
+function initStage1() {
+  const slider = document.getElementById('regretSlider');
+  const val = document.getElementById('sliderValue');
+  const err = document.getElementById('stage1Error');
+  err.textContent = '';
+  err.style.color = '#ff3366';
+  slider.value = 1;
+  updateSliderVal();
+
+  slider.addEventListener('input', updateSliderVal);
+
+  function updateSliderVal() {
+    const v = slider.value;
+    slider.style.setProperty('--val', v + '%');
+    val.textContent = toPersianNum(v) + '٪';
+  }
+}
+
+function submitStage1() {
+  const v = parseInt(document.getElementById('regretSlider').value, 10);
+  const err = document.getElementById('stage1Error');
+  if (v === 100) {
+    err.textContent = '✅ آفرین، درست گفتی';
+    err.style.color = '#4ade80';
+    stages['1'].completed = true;
+    stages['2'].unlocked = true;
+    vibrate([30, 20, 30]);
+    setTimeout(() => {
+      showCompletion('مرحله اول', () => {
+        showScene('scene3');
+        updateMenu();
+      });
+    }, 700);
+  } else {
+    err.textContent = 'خاک تو سرت اشتباه کردی خانومی';
+    err.style.color = '#ff3366';
+    err.classList.remove('show');
+    void err.offsetWidth;
+    err.classList.add('show');
+    vibrate(250);
+  }
+}
+
+/* ============ Stage 2: Game ============ */
+const demonSVG = `<svg viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="dg" cx="40%" cy="35%">
+      <stop offset="0%" stop-color="#ff4444"/>
+      <stop offset="100%" stop-color="#550000"/>
+    </radialGradient>
+  </defs>
+  <circle cx="25" cy="26" r="18" fill="url(#dg)" stroke="#ff0000" stroke-width="1.2"/>
+  <path d="M 11 13 Q 8 2 16 9 Q 13 12 11 13 Z" fill="#550000" stroke="#ff0000" stroke-width="0.8"/>
+  <path d="M 39 13 Q 42 2 34 9 Q 37 12 39 13 Z" fill="#550000" stroke="#ff0000" stroke-width="0.8"/>
+  <ellipse cx="18.5" cy="23" rx="4" ry="5" fill="#ffee00"/>
+  <ellipse cx="31.5" cy="23" rx="4" ry="5" fill="#ffee00"/>
+  <circle cx="18.5" cy="23" r="2" fill="#000"/>
+  <circle cx="31.5" cy="23" r="2" fill="#000"/>
+  <path d="M 15 33 Q 25 41 35 33" fill="#000" stroke="#ff0000" stroke-width="0.6"/>
+  <path d="M 18 33 L 19 37 M 22 34 L 23 38 M 28 34 L 27 38 M 32 33 L 31 37" stroke="#fff" stroke-width="1.3"/>
+</svg>`;
+
+let game = null;
+
+function initStage2() {
+  if (game) {
+    game.running = false;
+    if (game.spawnTimer) clearInterval(game.spawnTimer);
+    if (game.frameId) cancelAnimationFrame(game.frameId);
+  }
+  const arena = document.getElementById('arena');
+  arena.querySelectorAll('.demon, .shm').forEach(e => e.remove());
+
+  const player = document.createElement('div');
+  player.className = 'shm';
+  player.id = 'shmPlayer';
+  player.innerHTML = '<img src="https://uploadkon.ir/uploads/fe4020_26InShot-20261020-214427046.png" alt="sh_m">';
+  arena.appendChild(player);
+
+  game = {
+    running: true,
+    kills: 0,
+    lives: 3,
+    demons: [],
+    spawnTimer: null,
+    frameId: null,
+  };
+
+  document.getElementById('gameOverlay').classList.remove('show', 'win', 'lose');
+  document.getElementById('overlayBtn').style.display = 'none';
+  updateGameHUD();
+
+  game.spawnTimer = setInterval(spawnDemon, 850);
+  game.frameId = requestAnimationFrame(gameLoop);
+}
+
+function spawnDemon() {
+  if (!game || !game.running) return;
+  if (game.kills >= 25) return;
+
+  const arena = document.getElementById('arena');
+  const rect = arena.getBoundingClientRect();
+  const w = rect.width;
+  const h = rect.height;
+  const cx = w / 2;
+  const cy = h / 2;
+  const pad = 60;
+
+  const demon = document.createElement('div');
+  demon.className = 'demon';
+  demon.innerHTML = demonSVG;
+
+  const edge = Math.floor(Math.random() * 4);
+  let x, y;
+  if (edge === 0) { x = Math.random() * w; y = -pad; }
+  else if (edge === 1) { x = w + pad; y = Math.random() * h; }
+  else if (edge === 2) { x = Math.random() * w; y = h + pad; }
+  else { x = -pad; y = Math.random() * h; }
+
+  demon.style.left = x + 'px';
+  demon.style.top = y + 'px';
+
+  const speed = 1.0 + Math.random() * 1.0;
+  const angle = Math.atan2(cy - y, cx - x);
+
+  const obj = {
+    el: demon,
+    x, y,
+    vx: Math.cos(angle) * speed,
+    vy: Math.sin(angle) * speed,
+    dead: false,
+  };
+
+  demon.addEventListener('click', (ev) => {
+    ev.stopPropagation();
+    killDemon(obj);
+  });
+
+  arena.appendChild(demon);
+  game.demons.push(obj);
+}
+
+function gameLoop() {
+  if (!game || !game.running) return;
+
+  const arena = document.getElementById('arena');
+  const rect = arena.getBoundingClientRect();
+  const cx = rect.width / 2;
+  const cy = rect.height / 2;
+
+  for (let i = 0; i < game.demons.length; i++) {
+    const d = game.demons[i];
+    if (d.dead) continue;
+    d.x += d.vx;
+    d.y += d.vy;
+    d.el.style.left = d.x + 'px';
+    d.el.style.top = d.y + 'px';
+
+    const dist = Math.hypot(d.x - cx, d.y - cy);
+    if (dist < 52) {
+      d.dead = true;
+      d.el.remove();
+      game.lives--;
+      vibrate(120);
+      updateGameHUD();
+      if (game.lives <= 0) {
+        loseGame();
+        return;
+      }
+    }
+  }
+
+  game.demons = game.demons.filter(d => !d.dead);
+  game.frameId = requestAnimationFrame(gameLoop);
+}
+
+function killDemon(d) {
+  if (!game || !game.running || d.dead) return;
+  d.dead = true;
+  d.el.classList.add('dying');
+  setTimeout(() => d.el.remove(), 350);
+  game.kills++;
+  vibrate(15);
+  updateGameHUD();
+
+  if (game.kills >= 25) {
+    winGame();
+  }
+}
+
+function updateGameHUD() {
+  const bar = document.getElementById('killsBar');
+  const txt = document.getElementById('killsText');
+  const lives = document.getElementById('livesDisplay');
+  if (!bar || !game) return;
+
+  bar.style.width = Math.min(100, game.kills * 4) + '%';
+  txt.textContent = toPersianNum(game.kills) + ' / ۲۵';
+
+  const filled = Math.max(0, game.lives);
+  lives.textContent = '❤️'.repeat(filled) + '🖤'.repeat(Math.max(0, 3 - filled));
+}
+
+function winGame() {
+  game.running = false;
+  clearInterval(game.spawnTimer);
+  cancelAnimationFrame(game.frameId);
+
+  const overlay = document.getElementById('gameOverlay');
+  document.getElementById('overlayTitle').textContent = '🎉 برنده شدی!';
+  document.getElementById('overlayText').textContent = 'تو موفق شدی از sh_m محافظت کنی';
+  document.getElementById('overlayBtn').style.display = 'none';
+  overlay.classList.add('show', 'win');
+  overlay.classList.remove('lose');
+
+  stages['2'].completed = true;
+  stages['3'].unlocked = true;
+  vibrate([50, 40, 50, 40, 80]);
+
+  setTimeout(() => {
+    overlay.classList.remove('show');
+    showCompletion('مرحله دوم', () => {
+      showScene('scene3');
+      updateMenu();
+    });
+  }, 1800);
+}
+
+function loseGame() {
+  game.running = false;
+  clearInterval(game.spawnTimer);
+  cancelAnimationFrame(game.frameId);
+
+  const overlay = document.getElementById('gameOverlay');
+  document.getElementById('overlayTitle').textContent = '💔 باختی';
+  document.getElementById('overlayText').textContent = 'sh_m آسیب دید، دوباره تلاش کن';
+  const btn = document.getElementById('overlayBtn');
+  btn.style.display = 'inline-block';
+  btn.textContent = 'تلاش دوباره';
+  btn.onclick = () => {
+    overlay.classList.remove('show', 'lose', 'win');
+    initStage2();
+  };
+  overlay.classList.add('show', 'lose');
+  overlay.classList.remove('win');
+  vibrate(300);
+}
+
+/* ============ Stage 3 ============ */
+let wrongClicks = 0;
+
+function initStage3() {
+  wrongClicks = 0;
+  const wrong = document.getElementById('wrongOption');
+  const correct = document.getElementById('correctOption');
+  wrong.style.display = 'inline-block';
+  wrong.style.transform = 'scale(1)';
+  wrong.style.opacity = '1';
+  correct.classList.remove('correct');
+}
+
+function chooseWrong() {
+  wrongClicks++;
+  const wrong = document.getElementById('wrongOption');
+  showToast('اشتباه گفتی محدثه خانوم');
+  vibrate(120);
+
+  if (wrongClicks === 1) {
+    wrong.style.transform = 'scale(0.5)';
+  } else if (wrongClicks === 2) {
+    wrong.style.transform = 'scale(0.25)';
+  } else {
+    wrong.style.opacity = '0';
+    wrong.style.transform = 'scale(0.1)';
+    setTimeout(() => { wrong.style.display = 'none'; }, 400);
+  }
+}
+
+function chooseCorrect() {
+  if (stages['3'].completed) return;
+  document.getElementById('correctOption').classList.add('correct');
+  vibrate([30, 20, 30, 20, 60]);
+
+  stages['3'].completed = true;
+  stages['4'].unlocked = true;
+
+  setTimeout(() => {
+    showCompletion('مرحله سوم', () => {
+      showScene('scene3');
+      updateMenu();
+    });
+  }, 900);
+}
+
+/* ============ Floating Hearts ============ */
+let heartsStarted = false;
+function startHearts() {
+  if (heartsStarted) return;
+  heartsStarted = true;
+  setInterval(spawnFloatingHeart, 950);
+}
+function spawnFloatingHeart() {
+  const h = document.createElement('div');
+  h.className = 'floating-heart';
+  const emojis = ['❤️', '💕', '💗', '💖', '💝', '💘'];
+  h.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+  h.style.left = Math.random() * 100 + 'vw';
+  h.style.fontSize = (14 + Math.random() * 22) + 'px';
+  h.style.animationDuration = (7 + Math.random() * 6) + 's';
+  h.style.animationDelay = '0s';
+  document.body.appendChild(h);
+  setTimeout(() => h.remove(), 14000);
+}
+
+/* ============ Init ============ */
+updateWater();
+</script>
+</body>
+</html>
